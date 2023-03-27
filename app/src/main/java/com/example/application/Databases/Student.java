@@ -25,7 +25,7 @@ public class Student {
     @ColumnInfo(name = "Password")
     public String password;
 
-    @ColumnInfo(name = "Student_Id")
+    @ColumnInfo(name = "Student_Id", defaultValue = "0")
     public int studentId;
 
     @ColumnInfo(name = "Address")
