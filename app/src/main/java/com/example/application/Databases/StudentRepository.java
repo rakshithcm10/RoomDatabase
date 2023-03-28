@@ -32,7 +32,7 @@ public class StudentRepository {
     }
 
     public void updateRecord(Student student){
-
+        new UpdateStudentAsyncTask(studentsDao).execute(student);
     }
 
     public LiveData<List<Student>> getAllStudents(){
@@ -77,6 +77,22 @@ public class StudentRepository {
             return null;
         }
     }
+
+
+    private static class UpdateStudentAsyncTask extends AsyncTask<Student,Void,Void>{
+        private StudentsDao studentsDao;
+
+        public UpdateStudentAsyncTask(StudentsDao studentsDao) {
+            this.studentsDao = studentsDao;
+        }
+
+        @Override
+        protected Void doInBackground(Student... students) {
+            studentsDao.UpdateRecord(students[0]);
+            return null;
+        }
+    }
+
 
 
 }

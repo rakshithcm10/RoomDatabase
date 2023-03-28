@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.example.application.Authentication.AuthenticationActivity;
 
 
+import com.example.application.Data.DisplayData;
 import com.example.application.databinding.ActivityHomeBinding;
 
 public class HomeActivity extends AppCompatActivity {
@@ -46,6 +47,14 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(i);
                 Toast.makeText(HomeActivity.this, "Logout Successful", Toast.LENGTH_SHORT).show();
                 finish();
+            }
+        });
+
+        homeBinding.btnData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(HomeActivity.this, DisplayData.class);
+                startActivity(i);
             }
         });
 
