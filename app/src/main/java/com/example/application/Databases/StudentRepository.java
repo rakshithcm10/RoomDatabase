@@ -27,6 +27,12 @@ public class StudentRepository {
 
     }
 
+    public Student getStudentById(int id) {
+        return studentsDao.getStudentById(id);
+    }
+
+
+
     public void deleteRecord(Student student){
         new deleteStudentAsyncTask(studentsDao).execute(student);
     }

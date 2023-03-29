@@ -1,7 +1,6 @@
 package com.example.application.Adapters;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -29,10 +28,9 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentH
     private List<Student> students = new ArrayList<>();
     AppDatabase db;
     StudentsDao studentsDao;
-    private Context context;
+    private final Context context;
     private static final int EDIT_STUDENT_REQUEST_CODE = 1;
-    public StudentAdapter() {
-        this.students = students;
+    public StudentAdapter(Context context) {
         this.context = context;
         studentsDao = AppDatabase.getInstance(context).studentsDao();
     }
@@ -113,6 +111,12 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentH
             switch (menuItem.getItemId()){
 
                 case R.id.btn_popup_edit:
+                    Intent intent = new Intent(context, EditStudentActivity.class);
+                    intent.putExtra("student", student.getID());
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(intent);
+
+
 
                     return true;
 

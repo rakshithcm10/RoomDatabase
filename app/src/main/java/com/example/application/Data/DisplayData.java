@@ -27,11 +27,12 @@ public class DisplayData extends AppCompatActivity {
         setContentView(R.layout.activity_display_data);
         setTitle("Students Data");
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.BLUE));
-
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
-        StudentAdapter adapter = new StudentAdapter();
+        StudentAdapter adapter = new StudentAdapter(getApplicationContext());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
 
 
 

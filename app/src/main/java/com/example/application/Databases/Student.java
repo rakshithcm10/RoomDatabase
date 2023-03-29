@@ -1,5 +1,6 @@
 package com.example.application.Databases;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -11,6 +12,7 @@ public class Student {
     public  int ID;
 
     @ColumnInfo(name = "First_Name")
+    @NonNull
     public String firstName;
 
     @ColumnInfo(name = "Last_Name")
@@ -50,9 +52,7 @@ public class Student {
         return ID;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
+    public String getFirstName() {return firstName;}
 
     public String getLastName() {
         return lastName;
@@ -80,5 +80,8 @@ public class Student {
 
     public void setPhoneNumber(String phone) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getAddress() {return address;
     }
 }

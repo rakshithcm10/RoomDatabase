@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 2,
-    "identityHash": "893a0a62fd23a59ced2ff0d32765738e",
+    "identityHash": "0585fe5f437d903d40d11f32bb699813",
     "entities": [
       {
         "tableName": "Student",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`ID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `First_Name` TEXT, `Last_Name` TEXT, `Email` TEXT, `Phone_Number` TEXT, `Password` TEXT, `Student_Id` INTEGER NOT NULL DEFAULT 0, `Address` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`ID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `First_Name` TEXT NOT NULL, `Last_Name` TEXT, `Email` TEXT, `Phone_Number` TEXT, `Password` TEXT, `Student_Id` INTEGER NOT NULL DEFAULT 0, `Address` TEXT)",
         "fields": [
           {
             "fieldPath": "ID",
@@ -18,7 +18,7 @@
             "fieldPath": "firstName",
             "columnName": "First_Name",
             "affinity": "TEXT",
-            "notNull": false
+            "notNull": true
           },
           {
             "fieldPath": "lastName",
@@ -71,7 +71,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '893a0a62fd23a59ced2ff0d32765738e')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '0585fe5f437d903d40d11f32bb699813')"
     ]
   }
 }

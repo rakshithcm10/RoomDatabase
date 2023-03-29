@@ -33,4 +33,7 @@ public interface StudentsDao {
     @Query("select Exists(Select * from Student where Email = :email and Password = :password)")
     Boolean checkEmailPassword(String email,String password);
 
+    @Query("SELECT * FROM Student WHERE id = :id")
+    Student getStudentById(int id);
+
 }
